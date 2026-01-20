@@ -20,6 +20,9 @@ const Feedback = (props) => {
 const Statistics = (props) => {
 
     const all = props.good + props.neutral + props.bad;
+    if (all === 0) {
+        return (<div><h2>statistics</h2><p>No feedback given</p></div>)
+    }
     const average = (props.good - props.bad) / all;
     const positive = props.good/all;
 
